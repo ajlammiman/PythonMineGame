@@ -13,6 +13,8 @@ class MakeMove:
     def left(self):
         self.___position = {"x":self.___position["x"] -1, "y": self.___position["y"]}
 
+    def right(self):
+        self.___position = {"x":self.___position["x"] +1, "y": self.___position["y"]}
 
     def position(self):
         return self.___position

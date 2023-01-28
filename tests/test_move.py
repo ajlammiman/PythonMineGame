@@ -33,3 +33,11 @@ class test_move(unittest.TestCase):
         move.left()
        
         self.assertEqual(move.position(), {"x":1, "y":1})
+
+    def test_can_move_right(self):
+        current_position = {"x":1, "y":1}
+        move = MakeMove(current_position)
+
+        move.right()
+       
+        self.assertEqual(move.position(), {"x":2, "y":1})
