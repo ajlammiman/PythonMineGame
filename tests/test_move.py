@@ -26,3 +26,10 @@ class test_move(unittest.TestCase):
        
         self.assertEqual(move.position(), {"x":1, "y":1})
     
+    def test_can_move_left(self):
+        current_position = {"x":2, "y":1}
+        move = MakeMove(current_position)
+
+        move.left()
+       
+        self.assertEqual(move.position(), {"x":1, "y":1})
