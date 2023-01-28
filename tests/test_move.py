@@ -17,3 +17,12 @@ class test_move(unittest.TestCase):
        
         self.assertEqual(move.position(), {"x":1, "y":2})
     
+
+    def test_can_move_down(self):
+        current_position = {"x":1, "y":2}
+        move = MakeMove(current_position)
+
+        move.down()
+       
+        self.assertEqual(move.position(), {"x":1, "y":1})
+    
