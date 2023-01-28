@@ -62,3 +62,4 @@ class test_game(unittest.TestCase):
         game.player_move_down()
        
         self.assertEqual(game.output(), "You are now on square 1:1, what's your move?")
+    
