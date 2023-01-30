@@ -10,10 +10,11 @@ class Game():
         self.___move = MakeMove(start)
 
     def start(self):
-        self.___output_text = "You have started on sqare {}:{}, what's your move?".format(self.___move.position()["x"], self.___move.position()["y"])
+        self.___output_text = "You have started on sqare {}, what's your move?".format(self.format_position())
     
     def player_move_up(self):
-        self.___output_text = "You are now on square 2:1, what's your move?"
+        self.___move.up()
+        self.___output_text = "You are now on square {}, what's your move?".format(self.format_position())
 
     def player_move_right(self):
         self.___output_text = "You are now on square 1:2, what's your move?"
@@ -26,3 +27,6 @@ class Game():
 
     def output(self):
         return self.___output_text
+
+    def format_position(self):
+        return "{}:{}".format(self.___move.position()["x"], self.___move.position()["y"])

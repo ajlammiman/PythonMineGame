@@ -29,7 +29,7 @@ class test_game(unittest.TestCase):
 
         game.player_move_up()
        
-        self.assertEqual(game.output(), "You are now on square 2:1, what's your move?")
+        self.assertEqual(game.output(), "You are now on square 1:2, what's your move?")
     
     def test_player_can_move_right(self):
         game = Game()
