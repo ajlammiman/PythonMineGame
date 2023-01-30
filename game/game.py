@@ -21,10 +21,12 @@ class Game():
         self.___output_text = "You are now on square {}, what's your move?".format(self.format_position())
 
     def player_move_left(self):
-        self.___output_text = "You are now on square 1:1, what's your move?"
+        self.___move.left()
+        self.___output_text = "You are now on square {}, what's your move?".format(self.format_position())
 
     def player_move_down(self):
-        self.___output_text = "You are now on square 1:1, what's your move?"     
+        self.___move.down()
+        self.___output_text = "You are now on square {}, what's your move?".format(self.format_position())
 
     def output(self):
         return self.___output_text
