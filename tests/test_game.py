@@ -15,7 +15,7 @@ class test_game(unittest.TestCase):
         self.assertEqual(game.output(), "You have started on sqare 1:1, what's your move?")
 
     def test_player_start_position_can_be_defined(self):
-        start = "1:2"
+        start = {"x":1, "y":2}
         game = Game(start)
         game.start()
        
@@ -42,7 +42,7 @@ class test_game(unittest.TestCase):
         self.assertEqual(game.output(), "You are now on square 1:2, what's your move?")
     
     def test_player_can_move_left(self):
-        start = "1:2"
+        start = {"x":1, "y":2}
         game = Game(start)
         game.start()
        
@@ -53,7 +53,7 @@ class test_game(unittest.TestCase):
         self.assertEqual(game.output(), "You are now on square 1:1, what's your move?")
 
     def test_player_can_move_down(self):
-        start = "2:1"
+        start = {"x":2, "y":1}
         game = Game(start)
         game.start()
        

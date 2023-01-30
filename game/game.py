@@ -1,14 +1,16 @@
+from game.move import MakeMove
+
 class Game():
-    ___start_postion = ""
+    ___move = None
     ___output_text = '''Welcome to the Game, you must reach the other side. Try not to die! Press S to start.\n 
         The board is 8x8, you must cross to the other side but avoid the mines! 3 mines and you lose.\n
         move up with W, down with X, left with A and right with D.'''
         
-    def __init__(self, start:str = "1:1") -> None:
-        self.___start_postion = start
+    def __init__(self, start:dict = {"x":1, "y":1}) -> None:
+        self.___move = MakeMove(start)
 
     def start(self):
-        self.___output_text = "You have started on sqare {}, what's your move?".format(self.___start_postion)
+        self.___output_text = "You have started on sqare {}:{}, what's your move?".format(self.___move.position()["x"], self.___move.position()["y"])
     
     def player_move_up(self):
         self.___output_text = "You are now on square 2:1, what's your move?"
