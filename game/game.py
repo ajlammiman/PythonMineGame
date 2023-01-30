@@ -17,7 +17,8 @@ class Game():
         self.___output_text = "You are now on square {}, what's your move?".format(self.format_position())
 
     def player_move_right(self):
-        self.___output_text = "You are now on square 1:2, what's your move?"
+        self.___move.right()
+        self.___output_text = "You are now on square {}, what's your move?".format(self.format_position())
 
     def player_move_left(self):
         self.___output_text = "You are now on square 1:1, what's your move?"
