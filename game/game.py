@@ -10,26 +10,26 @@ class Game():
         self.___move = MakeMove(start)
 
     def start(self):
-        self.___output_text = "You have started on sqare {}, what's your move?".format(self.format_position())
+        self.___output_text = self.format_position("You have started on sqare {}:{}, what's your move?")
     
     def player_move_up(self):
         self.___move.up()
-        self.___output_text = "You are now on square {}, what's your move?".format(self.format_position())
+        self.___output_text = self.format_position("You are now on square {}:{}, what's your move?") 
 
     def player_move_right(self):
         self.___move.right()
-        self.___output_text = "You are now on square {}, what's your move?".format(self.format_position())
+        self.___output_text = self.format_position("You are now on square {}:{}, what's your move?") 
 
     def player_move_left(self):
         self.___move.left()
-        self.___output_text = "You are now on square {}, what's your move?".format(self.format_position())
+        self.___output_text = self.format_position("You are now on square {}:{}, what's your move?") 
 
     def player_move_down(self):
         self.___move.down()
-        self.___output_text = "You are now on square {}, what's your move?".format(self.format_position())
+        self.___output_text = self.format_position("You are now on square {}:{}, what's your move?") 
 
     def output(self):
         return self.___output_text
 
-    def format_position(self):
-        return "{}:{}".format(self.___move.position()["x"], self.___move.position()["y"])
+    def format_position(self, position_description: str):
+        return position_description.format(self.___move.position()["x"], self.___move.position()["y"])
