@@ -4,42 +4,42 @@ import unittest
 class test_change_position(unittest.TestCase):
     def test_position_is_known_before_move(self):
         current_position = {"x":1, "y":1}
-        move = ChangePosition(current_position)
+        change_position = ChangePosition(current_position)
 
-        self.assertEqual(move.position(), current_position)
+        self.assertEqual(change_position.position(), current_position)
     
     
     def test_can_change_position_up(self):
         current_position = {"x":1, "y":1}
-        move = ChangePosition(current_position)
+        change_position = ChangePosition(current_position)
 
-        move.up()
+        change_position.up()
        
-        self.assertEqual(move.position(), {"x":1, "y":2})
+        self.assertEqual(change_position.position(), {"x":1, "y":2})
     
 
     def test_can_change_position_down(self):
         current_position = {"x":1, "y":2}
-        move = ChangePosition(current_position)
+        change_position = ChangePosition(current_position)
 
-        move.down()
+        change_position.down()
        
-        self.assertEqual(move.position(), {"x":1, "y":1})
+        self.assertEqual(change_position.position(), {"x":1, "y":1})
     
     def test_can_change_position_left(self):
         current_position = {"x":2, "y":1}
-        move = ChangePosition(current_position)
+        change_position = ChangePosition(current_position)
 
-        move.left()
+        change_position.left()
        
-        self.assertEqual(move.position(), {"x":1, "y":1})
+        self.assertEqual(change_position.position(), {"x":1, "y":1})
 
     def test_can_chnage_position_right(self):
         current_position = {"x":1, "y":1}
-        move = ChangePosition(current_position)
+        change_position = ChangePosition(current_position)
 
-        move.right()
+        change_position.right()
        
-        self.assertEqual(move.position(), {"x":2, "y":1})
+        self.assertEqual(change_position.position(), {"x":2, "y":1})
 
     
