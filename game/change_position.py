@@ -1,4 +1,4 @@
-class MakeMove:
+class ChangePosition:
     ___position = None
 
     def __init__(self, current_position: dict):
