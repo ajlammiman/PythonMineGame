@@ -8,7 +8,7 @@ class test_move(unittest.TestCase):
         change_position = ChangePosition(current_position)
         move = Move(change_position)
 
-        self.assertEqual(move.description(), "You are now on square {}:{}, what's your move?".format(current_position["x"], current_position["y"]))
+        self.assertEqual(move.description(), "You have started on square {}:{}, what's your move?".format(current_position["x"], current_position["y"]))
     
     def test_can_move_up(self):
         current_position = {"x":1, "y":1}
