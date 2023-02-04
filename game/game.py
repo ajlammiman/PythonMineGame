@@ -9,10 +9,10 @@ class Game():
         move up with W, down with X, left with A and right with D.'''
         
     def __init__(self, board: Board, start:dict = {"x":1, "y":1}) -> None:
-       ___board_dimensions = board.getBoardDimensions()
+       ___board_dimensions = board.get_board_dimensions()
        self.___output_text = self.___output_text.format(___board_dimensions["columns"],___board_dimensions["rows"])
        change_position = ChangePosition()
-       self.___move = Move(change_position, start)
+       self.___move = Move(change_position, start, board)
 
     def start(self):
         self.___output_text = self.___move.description()
