@@ -1,4 +1,5 @@
 from enum import Enum, auto
+from game.board import Board
 from game.change_position import ChangePosition
 
 class Direction(Enum):

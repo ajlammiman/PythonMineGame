@@ -41,3 +41,4 @@ class test_move(unittest.TestCase):
         move.direction(Direction.left)
 
         self.assertEqual(move.description(), "You are now on square 1:1, what's your move?")
+    

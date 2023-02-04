@@ -1,13 +1,16 @@
+from game.board import Board
 from game.change_position import ChangePosition
 from game.move import Direction, Move
 
 class Game():
     ___move = None
     ___output_text = '''Welcome to the Game, you must reach the other side. Try not to die! Press S to start.\n 
-        The board is 8x8, you must cross to the other side but avoid the mines! 3 mines and you lose.\n
+        The board is {}x{}, you must cross to the other side but avoid the mines! 3 mines and you lose.\n
         move up with W, down with X, left with A and right with D.'''
         
-    def __init__(self, start:dict = {"x":1, "y":1}) -> None:
+    def __init__(self, board: Board, start:dict = {"x":1, "y":1}) -> None:
+       ___board_dimensions = board.getBoardDimensions()
+       self.___output_text = self.___output_text.format(___board_dimensions["columns"],___board_dimensions["rows"])
        change_position = ChangePosition(start)
        self.___move = Move(change_position)
 
