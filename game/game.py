@@ -11,8 +11,8 @@ class Game():
     def __init__(self, board: Board, start:dict = {"x":1, "y":1}) -> None:
        ___board_dimensions = board.getBoardDimensions()
        self.___output_text = self.___output_text.format(___board_dimensions["columns"],___board_dimensions["rows"])
-       change_position = ChangePosition(start)
-       self.___move = Move(change_position)
+       change_position = ChangePosition()
+       self.___move = Move(change_position, start)
 
     def start(self):
         self.___output_text = self.___move.description()

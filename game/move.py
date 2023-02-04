@@ -11,28 +11,31 @@ class Direction(Enum):
 class Move():
     ___start_text = "You have started on square {}:{}, what's your move?"
     ___move_text = "You are now on square {}:{}, what's your move?"
+    ___board = None
+    ___position = None
     ___change_position = None
     ___description = ""
 
-    def __init__(self, change_position: ChangePosition):
+    def __init__(self, change_position: ChangePosition, position: dict):
+        self.___position = position
         self.___change_position = change_position
-        self.___description = self.___start_text.format(self.___change_position.position()["x"], self.___change_position.position()["y"])
+        self.___description = self.___start_text.format(self.___position["x"], self.___position["y"])
 
     def description(self):
         return self.___description
     
     def direction(self, direction: Direction):
         if (direction == Direction.up):
-            self.___change_position.up()
-            self.___description = self.___move_text.format(self.___change_position.position()["x"], self.___change_position.position()["y"])
+            self.___position = self.___change_position.up(self.___position)
+            self.___description = self.___move_text.format(self.___position["x"], self.___position["y"])
         elif (direction == Direction.down):
-            self.___change_position.down()
-            self.___description = self.___move_text.format(self.___change_position.position()["x"], self.___change_position.position()["y"])    
+            self.___position = self.___change_position.down(self.___position)
+            self.___description = self.___move_text.format(self.___position["x"], self.___position["y"])
         elif (direction == Direction.right):
-            self.___change_position.right()
-            self.___description = self.___move_text.format(self.___change_position.position()["x"], self.___change_position.position()["y"])
+            self.___position = self.___change_position.right(self.___position)
+            self.___description = self.___move_text.format(self.___position["x"], self.___position["y"])
         elif (direction == Direction.left):
-            self.___change_position.left()
-            self.___description = self.___move_text.format(self.___change_position.position()["x"], self.___change_position.position()["y"])
-
+            self.___position = self.___change_position.left(self.___position)
+            self.___description = self.___move_text.format(self.___position["x"], self.___position["y"])
+       
        
