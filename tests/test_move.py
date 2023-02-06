@@ -1,6 +1,7 @@
 from game.board import Board
 from game.change_position import ChangePosition
-from game.move import Direction, Move
+from game.direction import Direction
+from game.move import Move
 import unittest
 
 class test_move(unittest.TestCase):

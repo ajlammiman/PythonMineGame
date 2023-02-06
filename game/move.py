@@ -1,12 +1,7 @@
-from enum import Enum, auto
 from game.board import Board
 from game.change_position import ChangePosition
+from game.direction import Direction
 
-class Direction(Enum):
-    up = auto()
-    down = auto()
-    left = auto()
-    right = auto()
 
 class Move():
     ___start_text = "You have started on square {}:{}, what's your move?"
