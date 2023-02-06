@@ -22,27 +22,8 @@ class Move():
         return self.___description
     
     def direction(self, direction: Direction):
-        if (direction == Direction.up):
-            new_position = self.___change_position.change(self.___position, direction)
-            if (self.___board.is_valid_move(new_position)):
-                self.___description = self.___move_text.format(new_position["x"], new_position["y"])
-            else:
-                self.___description = self.___invalid_move
-        elif (direction == Direction.down):
-            new_position = self.___change_position.change(self.___position, direction)
-            if (self.___board.is_valid_move(new_position)):
-                self.___description = self.___move_text.format(new_position["x"], new_position["y"])
-            else:
-                self.___description = self.___invalid_move
-        elif (direction == Direction.right):
-            new_position = self.___change_position.change(self.___position, direction)
-            if (self.___board.is_valid_move(new_position)):
-                self.___description = self.___move_text.format(new_position["x"], new_position["y"])
-            else:
-                self.___description = self.___invalid_move
-        elif (direction == Direction.left):
-            new_position = self.___change_position.change(self.___position, direction)
-            if (self.___board.is_valid_move(new_position)):
-                self.___description = self.___move_text.format(new_position["x"], new_position["y"])
-            else:
-                self.___description = self.___invalid_move
+        new_position = self.___change_position.change(self.___position, direction)
+        if (self.___board.is_valid_move(new_position)):
+            self.___description = self.___move_text.format(new_position["x"], new_position["y"])
+        else:
+            self.___description = self.___invalid_move       
