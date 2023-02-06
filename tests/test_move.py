@@ -13,7 +13,7 @@ class test_move(unittest.TestCase):
 
         self.assertEqual(move.description(), "You have started on square {}:{}, what's your move?".format(current_position["x"], current_position["y"]))
     
-    def test_can_move(self):
+    def test_can_make_a_move(self):
         board = Board({"columns":8, "rows":8})
         current_position = {"x":1, "y":1}
         change_position = ChangePosition()
