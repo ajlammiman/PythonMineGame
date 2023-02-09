@@ -9,7 +9,7 @@ class test_game(unittest.TestCase):
     def test_game_start_message_displays_size_of_board(self):
         board_size = {"columns":2, "rows":2}
         board = Board(board_size)
-        mines = Mines()
+        mines = Mines(board)
         change_position = ChangePosition()
         game = Game(board, mines, change_position)
         self.assertEqual(game.output(), '''Welcome to the Game, you must reach the other side. Try not to die! Press S to start.\n 
@@ -18,7 +18,7 @@ class test_game(unittest.TestCase):
     
     def test_game_can_be_started_with_default_starting_position(self):
         board = Board({"columns":8, "rows":8})
-        mines = Mines()
+        mines = Mines(board)
         change_position = ChangePosition()
         game = Game(board, mines, change_position)
         game.start()
@@ -28,7 +28,7 @@ class test_game(unittest.TestCase):
     def test_player_start_position_can_be_defined(self):
         board = Board({"columns":8, "rows":8})
         start = {"x":1, "y":2}
-        mines = Mines()
+        mines = Mines(board)
         change_position = ChangePosition()
         game = Game(board, mines, change_position, start)
         game.start()
@@ -37,7 +37,7 @@ class test_game(unittest.TestCase):
     
     def test_player_can_move_up(self):
         board = Board({"columns":8, "rows":8})
-        mines = Mines()
+        mines = Mines(board)
         change_position = ChangePosition()
         game = Game(board, mines, change_position)
         
@@ -51,7 +51,7 @@ class test_game(unittest.TestCase):
     
     def test_player_can_move_right(self):
         board = Board({"columns":8, "rows":8})
-        mines = Mines()
+        mines = Mines(board)
         change_position = ChangePosition()
         game = Game(board, mines, change_position)
         
@@ -66,7 +66,7 @@ class test_game(unittest.TestCase):
     def test_player_can_move_left(self):
         board = Board({"columns":8, "rows":8})
         start = {"x":2, "y":1}
-        mines = Mines()
+        mines = Mines(board)
         change_position = ChangePosition()
         game = Game(board, mines, change_position, start)
         
@@ -81,7 +81,7 @@ class test_game(unittest.TestCase):
     def test_player_can_move_down(self):
         board = Board({"columns":8, "rows":8})
         start = {"x":1, "y":2}
-        mines = Mines()
+        mines = Mines(board)
         change_position = ChangePosition()
         game = Game(board, mines, change_position, start)
         

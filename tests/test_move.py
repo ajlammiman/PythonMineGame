@@ -10,7 +10,7 @@ class test_move(unittest.TestCase):
         board = Board({"columns":8, "rows":8})
         current_position = {"x":1, "y":1}
         change_position = ChangePosition()
-        mines = Mines()
+        mines = Mines(board)
         move = Move(change_position, current_position,board, mines)
 
         self.assertEqual(move.description(), "You have started on square {}:{}, what's your move?".format(current_position["x"], current_position["y"]))
@@ -18,7 +18,7 @@ class test_move(unittest.TestCase):
     def test_can_make_a_move(self):
         board = Board({"columns":8, "rows":8})
         current_position = {"x":1, "y":1}
-        mines = Mines()
+        mines = Mines(board)
         change_position = ChangePosition()
         move = Move(change_position, current_position, board, mines)
         move.direction(Direction.up)
@@ -29,7 +29,7 @@ class test_move(unittest.TestCase):
         board = Board({"columns":1, "rows":1})
         current_position = {"x":1, "y":1}
         change_position = ChangePosition()
-        mines = Mines()
+        mines = Mines(board)
         move = Move(change_position, current_position,board, mines)
         move.direction(Direction.up)
 
@@ -47,4 +47,4 @@ class test_move(unittest.TestCase):
 
 class MockMine:
     def check_for_mine(self, position:dict, direction: Direction):
-        return "You have hit a mine!\n "   
+        return "You have hit a mine!\n "
