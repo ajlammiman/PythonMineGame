@@ -5,7 +5,7 @@ from game.mines import Mines
 
 class Move():
     ___start_text = "You have started on square {}:{}, what's your move?"
-    ___move_text = "{}You are now on square {}:{}, what's your move?"
+    ___move_text = "You are now on square {}:{}, what's your move?"
     ___board = None
     ___position = None
     ___change_position = None
@@ -25,9 +25,9 @@ class Move():
     
     def direction(self, direction: Direction):
         new_position = self.___change_position.change(self.___position, direction)
-        mine_message = self.___mines.check_for_mine(self.___position, direction)
+        mine_message = self.___mines.check_for_mine(new_position)
 
         if (self.___board.is_valid_move(new_position)):
-            self.___description = self.___move_text.format(mine_message, new_position["x"], new_position["y"])
+            self.___description = self.___move_text.format(new_position["x"], new_position["y"])
         else:
             self.___description = self.___invalid_move       
