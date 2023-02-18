@@ -10,4 +10,4 @@ class Mines:
         return [({"x": int(random.random()),"y": int(random.random())}) for _ in range(number_of_mines)]
     
     def check_for_mine(self, check_position:dict):
-        return False
+        return True if check_position in self.___mines else False

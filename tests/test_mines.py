@@ -18,15 +18,15 @@ class test_mines(unittest.TestCase):
             self.assertEqual(mines._Mines___mines, mined_locations)
     
     def test_informs_if_mine_is_present(self):
-        mined_location = {"x":1,"y":1}
         number_of_mines = 1
-        with patch.object(Mines,"check_for_mine", lambda self, check_position: True):     
+        mined_location = {"x":1,"y":1}
+        with patch("game.mines.random.random", lambda : 1):     
             mines = Mines(number_of_mines)
             self.assertEqual(mines.check_for_mine(mined_location), True)
     
     def test_informs_if_mine_is_not_present(self):
-        mined_location = {"x":1,"y":1}
         number_of_mines = 1
-        with patch.object(Mines,"check_for_mine", lambda self, check_position: False):     
+        mined_location = {"x":1,"y":1}
+        with patch("game.mines.random.random", lambda : 2):     
             mines = Mines(number_of_mines)
             self.assertEqual(mines.check_for_mine(mined_location), False)
